@@ -25,7 +25,7 @@ public class StudyBuddies {
         Student[] studentArray = new Student[6];
 
         for (int i = 0; i < studentArray.length; i++) {
-            studentArray[i] = Student.values()[(int) (Math.random() * (studentArray.length))];
+            studentArray[i] = Student.values()[(int) (Math.random() * (Student.values().length))];
         }
         return studentArray;
     }
@@ -39,21 +39,16 @@ public class StudyBuddies {
      * 
      */
     public static void groupAnalyzer(Student[] studentArray) {
-        int[] count = new int[studentArray.length];
         System.out.println("The following types of students are in your study group:");
-
         for (int j = 0; j < Student.values().length; j++) {
             int temp = 0;
             for (int i = 0; i < studentArray.length; i++) {
                 if (Student.values()[j] == studentArray[i]) {
                     temp++;
+                    
                 }
             }
-            count[j] = temp;
-        }
-
-        for (int k = 0; k < Student.values().length; k++) {
-            System.out.println(Student.values()[k] + " " + count[k]);
+            System.out.println(Student.values()[j] + " " + temp);
         }
     }
 
