@@ -34,10 +34,10 @@ public class Neighborhood {
      */
     public void displayNewHouses(int year) {
         for (int i = 0; i < numHouses; i++) {
-            if (houses[i].getYearBuilt() >= year) {
+            if (houses[i] != null && houses[i].getYearBuilt() >= year) {
                 House cur = houses[i];
                 System.out.printf(
-                        "House located at %s was built in %d, has %.2f number of bathrooms, and "
+                        "House located at %s was built in %d, has %.1f number of bathrooms, and "
                                 + (cur.getIsRenovated() ? "has" : "has not") + " been renovated recently.\n",
                         cur.getAddress(), cur.getYearBuilt(), cur.getNumBaths());
             }
@@ -54,10 +54,6 @@ public class Neighborhood {
      */
     public House addHouse(House house, int index) {
 
-        // TODO: check what happens when {@code index} is out of bounds and house is
-        // null
-        // TODO: Ask TA if we can append to the array and ask about conflicts with
-        // instructions specifying invalid index and no house prev stored at index
         if(index>= houses.length || index < 0){
             return null;
         }
@@ -66,6 +62,12 @@ public class Neighborhood {
             prev = houses[index];
             houses[index] = house;
             return prev;
+        }
+
+        if(houses[index] == null){
+            houses[index] = house;
+            numHouses++;
+            return null;
         }
 
         return null;
