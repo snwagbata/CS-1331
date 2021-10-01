@@ -1,6 +1,5 @@
 /**
  * This file defines the House object.
- * 
  * @author Somtochukwu Nwagbata
  * @version 1.0
  * @since 2021-09-26
@@ -13,7 +12,6 @@ public class House {
 
     /**
      * Main constructor for House object.
-     * 
      * @param address    the address of the house
      * @param yearBuilt  the year the house was built
      * @param numBaths   the number of bathrooms in the house

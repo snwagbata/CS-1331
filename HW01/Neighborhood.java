@@ -1,6 +1,5 @@
 /**
  * This file defines the Neighborhood object.
- * 
  * @author Somtochukwu Nwagbata
  * @version 1.0
  * @since 2021-09-26
@@ -11,12 +10,11 @@ public class Neighborhood {
 
     /**
      * Constructor for objects of class Neighborhood.
-     * 
      * @param houses the array of houses
      */
     public Neighborhood(House[] houses) {
         this.houses = houses;
-        this.numHouses = houses.length;
+        this.numHouses = validateHouseArray(houses);
     }
 
     /**
@@ -24,12 +22,10 @@ public class Neighborhood {
      */
     public Neighborhood() {
         this(new House[5]);
-        this.numHouses = 0;
     }
 
     /**
      * Prints details about houses built after {@code year}.
-     * 
      * @param year the year to start printing
      */
     public void displayNewHouses(int year) {
@@ -47,14 +43,13 @@ public class Neighborhood {
 
     /**
      * Adds a house to the neighborhood.
-     * 
      * @param house the house to be added
      * @param index the index to add the house
      * @return previous house at index
      */
-    public House addHouse(House house, int index) {
+    public House addHouse(int index, House house) {
 
-        if(index>= houses.length || index < 0){
+        if (index >= houses.length || index < 0) {
             return null;
         }
         House prev = new House();
@@ -64,7 +59,7 @@ public class Neighborhood {
             return prev;
         }
 
-        if(houses[index] == null){
+        if (houses[index] == null) {
             houses[index] = house;
             numHouses++;
             return null;
@@ -75,12 +70,11 @@ public class Neighborhood {
 
     /**
      * Removes a house from the neighborhood.
-     * 
      * @param index index at which the house is to be removed
      * @return the house that was removed
      */
     public House removeHouse(int index) {
-        if(index>= houses.length || index < 0){
+        if (index >= houses.length || index < 0) {
             return null;
         }
         House prev = new House();
@@ -95,7 +89,6 @@ public class Neighborhood {
 
     /**
      * Checks if neighborhood is full.
-     * 
      * @return true if the neighborhood is full/false otherwise.
      */
     public boolean isFull() {
@@ -105,5 +98,20 @@ public class Neighborhood {
             }
         }
         return true;
+    }
+
+    /**
+     * Counts number of @{code House} objects in the neighborhood.
+     * @param houses the array of houses
+     * @return number of houses in the neighborhood
+     */
+    private int validateHouseArray(House[] house) {
+        int count = 0;
+        for (int i = 0; i < house.length; i++) {
+            if (house[i] instanceof House) {
+                count++;
+            }
+        }
+        return count;
     }
 }
