@@ -30,7 +30,16 @@ public class Witch extends TrickOrTreater {
      *                       object is partnered with.
      */
     public Witch(String name, String signatureSpell, BlackCat companion) {
-        this(name, "Godric’s Hollow", 13, signatureSpell, companion);
+        this(name, "Godric's Hollow", 13, signatureSpell, companion);
+    }
+
+    /**
+     * Constructor for the {@code Witch} object that creates a copy of the witch.
+     * @param other The {@code Witch} object to be copied.
+     */
+    public Witch(Witch other) {
+        this(other.name, other.neighborhood, other.numCandy, other.signatureSpell,
+                new BlackCat(other.companion.getName(), other.companion.getFamiliar()));
     }
 
     /**
@@ -50,27 +59,35 @@ public class Witch extends TrickOrTreater {
     }
 
     /**
-     * This method returns the {@code BlackCat} object that the {@code Witch} is partnered with.
-     * @return companion The {@code BlackCat} object that the {@code Witch} is partnered with.
+     * This method returns the {@code BlackCat} object that the {@code Witch} is
+     * partnered with.
+     * @return companion The {@code BlackCat} object that the {@code Witch} is
+     *         partnered with.
      */
     public BlackCat getCompanion() {
         return companion;
     }
 
     /**
-     * This method sets the {@code BlackCat} object that the {@code Witch} is partnered with.
-     * @param companion The {@code BlackCat} object that the {@code Witch} is partnered with.
+     * This method sets the {@code BlackCat} object that the {@code Witch} is
+     * partnered with.
+     * @param companion The {@code BlackCat} object that the {@code Witch} is
+     *                  partnered with.
      */
     public void setCompanion(BlackCat companion) {
         this.companion = companion;
     }
 
     /**
-     * This methods casts the signature spell of the {@code Witch} object.
-     * Also it doeubles the witch's candies.
+     * This methods casts the signature spell of the {@code Witch} object. Also it
+     * doeubles the witch's candies.
      */
     public void castSpell() {
         System.out.println(super.getName() + " casts " + signatureSpell + "!");
+        //important the total candy is set before numCandy is doubled
+        //this is due to the fact that the wrong numCandy will be set
+        //their positions were switched
+        super.setTotalCandy(numCandy);
         super.setNumCandy(numCandy);
     }
 }
