@@ -6,7 +6,7 @@
 public class TrickOrTreater {
     protected String name, neighborhood;
     protected int numCandy;
-    protected int totalCandy; // TODO what reserved word for this?
+    protected static int totalCandy;
 
     /**
      * Constructs the {@code TrickOrTreater} object.
@@ -18,13 +18,14 @@ public class TrickOrTreater {
         this.name = name;
         this.neighborhood = neighborhood;
         this.numCandy = numCandy;
+        TrickOrTreater.setTotalCandy(numCandy);
     }
 
     /**
      * Constructs the {@code TrickOrTreater} object with no params.
      */
     public TrickOrTreater() {
-        this("Agnes", "Halloweentown.", 0);
+        this("Agnes", "Halloweentown", 0);
     }
 
     /**
@@ -33,8 +34,8 @@ public class TrickOrTreater {
      */
     public void seekCandy(int luck) {
         luck *= 3;
-        numCandy += luck;
-        totalCandy += luck;
+        setNumCandy(luck);
+        setTotalCandy(luck);
     }
 
     /**
@@ -65,7 +66,7 @@ public class TrickOrTreater {
      * Returns the total number of candy the {@code TrickOrTreater} object has.
      * @return the total number of candy
      */
-    public int getTotalCandy() {
+    public static int getTotalCandy() {
         return totalCandy;
     }
 
@@ -92,7 +93,6 @@ public class TrickOrTreater {
     public void setNumCandy(int numCandy) {
         if (numCandy > 0) {
             this.numCandy += numCandy;
-            this.totalCandy += numCandy;
         }
     }
 
@@ -100,8 +100,9 @@ public class TrickOrTreater {
      * sets the total number of candy the {@code TrickOrTreater} object has.
      * @param totalCandy the total number of candy the {@code TrickOrTreater} object has
      */
-    public void setTotalCandy(int totalCandy) {
-        this.totalCandy = totalCandy;
+    public static void setTotalCandy(int totalCandy) {
+        if (totalCandy > 0) {
+            TrickOrTreater.totalCandy += totalCandy;
+        }
     }
-
 }
