@@ -37,7 +37,7 @@ public class BlackCat {
      * Returns whether the cat is familiar.
      * @return whether the cat is familiar
      */
-    public boolean isFamiliar() {
+    public boolean getFamiliar() {
         return familiar;
     }
 
