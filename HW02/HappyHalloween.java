@@ -9,6 +9,10 @@ public class HappyHalloween {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        TrickOrTreater foo = new TrickOrTreater();
+        TrickOrTreater bar = new TrickOrTreater();
+        bar.seekCandy(420);
+        foo.getName();
         BlackCat blackCat = new BlackCat("Pussy", false);
         BlackCat blackCat2 = new BlackCat("Meow", true);
         Witch witch = new Witch("Shark", "Eat", blackCat);
@@ -16,6 +20,7 @@ public class HappyHalloween {
         witch2.setName("Sharky");
         witch.getCompanion().setName("Meow");
         System.out.println(witch2.getCompanion().getName());
+        witch2.setCompanion(blackCat2);
         Ghost ghost = new Ghost("Ghosty", "Scary", 69, 9);
         Ghost ghost2 = new Ghost(ghost);
         ghost.seekCandy(420);
