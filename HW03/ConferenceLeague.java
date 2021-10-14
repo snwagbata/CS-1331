@@ -59,7 +59,7 @@ public class ConferenceLeague extends Tournament {
     public boolean equals(Object obj) {
         if (obj instanceof ConferenceLeague) {
             ConferenceLeague other = (ConferenceLeague) obj;
-            return getFinalReferee() == other.getFinalReferee() && currentHolder.equals(other.currentHolder);
+            return getFinalReferee().equals(other.getFinalReferee()) && currentHolder.equals(other.currentHolder);
         }
         return false;
     }
