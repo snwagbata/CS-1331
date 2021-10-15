@@ -54,7 +54,7 @@ public class SummerShowdown extends Tournament {
     public boolean equals(Object obj) {
         if (obj instanceof SummerShowdown) {
             SummerShowdown other = (SummerShowdown) obj;
-            return getFinalReferee().equals(other.getFinalReferee()) && this.backupReferee.equals(other.backupReferee);
+            return getFinalReferee().equals(other.getFinalReferee()) && this.maxCapacity == other.maxCapacity;
         }
         return false;
     }

@@ -27,7 +27,7 @@ public class ConferenceLeague extends Tournament {
     public void refereeHire(String refereeName) {
         if (getFinalReferee().equals(refereeName)) {
             System.out.println("We need a new referee!");
-            setFinalReferee(refereeName);
+            setFinalReferee("Undecided");
         } else {
             System.out.println("We’re ready to go!");
             maxCapacity *= 2;

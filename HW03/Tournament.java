@@ -24,7 +24,7 @@ public abstract class Tournament {
         this.finalReferee = finalReferee;
         this.knockout = knockout;
         // Set knockout to truw if numTeams is greater than 64
-        if (numTeams > 64 && !knockout) {
+        if (this.numTeams > 64 && !this.knockout) {
             this.knockout = true;
         }
         this.maxCapacity = maxCapacity;
