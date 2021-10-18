@@ -1,17 +1,33 @@
+/**
+ * This class represents a ship on the high seas with cargo on board.
+ * @author Somtochukwu Nwagbata
+ * @version 1.0
+ */
 public class Ship implements Plunderable {
     private Loot[] cargo;
     private double totalCargoValue;
     private String name;
 
+    /**
+     * Constructor for objects of class Ship.
+     * @param name The name of the ship.
+     */
     public Ship(String name) {
         this.name = name;
         cargo = new Loot[10];
     }
 
+    /**
+     * No-param constructor for objects of class Ship.
+     */
     public Ship() {
         this("Black Pearl");
     }
 
+    /**
+     * Adds a new piece of loot to the ship.
+     * @param newItem The new piece of loot to be added.
+     */
     public void addCargo(Loot newItem) {
         for (int i = 0; i < cargo.length; i++) {
             if (cargo[i] == null) {
@@ -22,6 +38,10 @@ public class Ship implements Plunderable {
         }
     }
 
+    /**
+     * Removes a piece of loot from the ship.
+     * @return The removed piece of loot.
+     */
     public Loot removeCargo() {
         Loot removedItem = null;
         for (int i = 0; i < cargo.length; i++) {
@@ -35,6 +55,11 @@ public class Ship implements Plunderable {
         return removedItem;
     }
 
+    /**
+     * Removes a specified loot from the ship.
+     * @param carg The loot to be removed.
+     * @return The removed loot.
+     */
     public Loot removeCargo(Loot carg) {
         Loot removedItem = null;
         for (int i = 0; i < cargo.length; i++) {
@@ -48,18 +73,28 @@ public class Ship implements Plunderable {
         return removedItem;
     }
 
+    /**
+     * Plunders loot from the ship.
+     * @return The plundered loot.
+     */
     @Override
     public Loot[] bePlundered() {
-        //TODO: fix to past tests
         Loot[] loot = new Loot[cargo.length];
         for (int i = 0; i < cargo.length; i++) {
-            loot[i] = cargo[i];
-            totalCargoValue -= loot[i].getValue();
-            cargo[i] = null;
+            // account for possible null cargo
+            if (cargo[i] != null) {
+                loot[i] = cargo[i];
+                totalCargoValue -= loot[i].getValue();
+                cargo[i] = null;
+            }
         }
         return loot;
     }
 
+    /**
+     * String representation of the Ship.
+     * @return string representation of the ship.
+     */
     @Override
     public String toString() {
         String cargos = "";
@@ -71,5 +106,4 @@ public class Ship implements Plunderable {
         return String.format("A ship called %s with cargo %s which has a total value of %.2f.", name, cargos,
                 totalCargoValue);
     }
-
 }
