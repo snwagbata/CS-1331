@@ -80,15 +80,25 @@ public class Ship implements Plunderable {
     @Override
     public Loot[] bePlundered() {
         Loot[] loot = new Loot[cargo.length];
+        int j = 0;
         for (int i = 0; i < cargo.length; i++) {
             // account for possible null cargo
             if (cargo[i] != null) {
-                loot[i] = cargo[i];
-                totalCargoValue -= loot[i].getValue();
+                loot[j] = cargo[i];
+                totalCargoValue -= cargo[i].getValue();
                 cargo[i] = null;
+                j++;
             }
         }
-        return loot;
+        Loot[] temp = new Loot[j];
+        // No need to worry about out of bounds here as that's prevented above
+        for (int i = 0; i < loot.length; i++) {
+            if (loot[i] != null) {
+                temp[i] = loot[i];
+            }
+        }
+
+        return temp;
     }
 
     /**
