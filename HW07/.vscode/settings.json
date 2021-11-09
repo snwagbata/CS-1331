@@ -1,0 +1,16 @@
+{
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\heale\\Desktop\\FALL 2021\\CS1331\\Assignments\\javafx-sdk-11.0.2\\lib\\javafx.base.jar",
+        "c:\\Users\\heale\\Desktop\\FALL 2021\\CS1331\\Assignments\\javafx-sdk-11.0.2\\lib\\javafx.controls.jar",
+        "c:\\Users\\heale\\Desktop\\FALL 2021\\CS1331\\Assignments\\javafx-sdk-11.0.2\\lib\\javafx.fxml.jar",
+        "c:\\Users\\heale\\Desktop\\FALL 2021\\CS1331\\Assignments\\javafx-sdk-11.0.2\\lib\\javafx.graphics.jar",
+        "c:\\Users\\heale\\Desktop\\FALL 2021\\CS1331\\Assignments\\javafx-sdk-11.0.2\\lib\\javafx.media.jar",
+        "c:\\Users\\heale\\Desktop\\FALL 2021\\CS1331\\Assignments\\javafx-sdk-11.0.2\\lib\\javafx.swing.jar",
+        "c:\\Users\\heale\\Desktop\\FALL 2021\\CS1331\\Assignments\\javafx-sdk-11.0.2\\lib\\javafx.web.jar",
+        "c:\\Users\\heale\\Desktop\\FALL 2021\\CS1331\\Assignments\\javafx-sdk-11.0.2\\lib\\javafx-swt.jar"
+    ]
+}
