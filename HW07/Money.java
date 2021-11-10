@@ -28,7 +28,7 @@ public class Money {
         }
         return money[index] / 100.0 + total(money, index + 1);
     }
-    
+
     /**
      * Subtract the cost of product from the total amount of money received.
      * @param price The cost of the product.
@@ -41,14 +41,17 @@ public class Money {
 
     /**
      * Count the amount of coins needed to give change.
+     * @param cents The amount of money to be given change.
+     * @return The amount of coins needed to give change.
      */
     public static int makeChange(int cents) {
-        int[] money = { 25, 10, 5, 1 };
+        int[] money = {25, 10, 5, 1};
         return makeChange(cents, money);
     }
 
     /**
-     * This function will convert the amount of money into the equivalent number of coins.
+     * This function will convert the amount of money into the equivalent number of
+     * coins.
      * @param cents The amount of money to be converted.
      * @param money The array of coins to be used.
      * @return The number of coins that can be used to make up the amount of money.
@@ -76,6 +79,4 @@ public class Money {
         }
         return makeChange(cents, newArr);
     }
-
-
 }
