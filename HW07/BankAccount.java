@@ -29,7 +29,7 @@ public class BankAccount extends Application {
                 BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         BorderPane root = new BorderPane();
         root.setBackground(new Background(k));
-
+                
         StackPane stack = new StackPane();
         stack.setMaxWidth(25.0);
         Circle circle = new Circle(25, 25, 25);
