@@ -1,5 +1,5 @@
 /**
- * Animal Enum for accrpted Animals
+ * Animal Enum for accrpted Animals.
  * @author Somtochukwu Nwagbata
  * @version 1.0
  */
