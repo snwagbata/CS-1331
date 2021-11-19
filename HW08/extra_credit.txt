@@ -1,0 +1,2 @@
+Used a dialog box for collecting animal information.
+Created a queue for animals waiting to be added to the sanctuary.
